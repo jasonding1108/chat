@@ -1,6 +1,4 @@
-import os #operation system
-
- #讀取檔案
+#讀取檔案
 def read_file(filename):
 	lines = []
 	with open(filename, 'r', encoding='utf-8-sig') as f: 
@@ -8,6 +6,7 @@ def read_file(filename):
 			lines.append(line.strip()) 
 		return lines
 
+#轉換檔案, 加人名
 def convert(lines):
 	new = []
 	person = None   #定義person初始值
@@ -22,12 +21,11 @@ def convert(lines):
 			new.append(person + ': ' + line)  #裝進去new
 	return new
 
-
+#寫入檔案
 def write_file(filename, lines):
 	with open(filename, 'w', encoding='utf-8') as f:           
 		for line in lines:
 			f.write(line + '\n')
-
 
 def main():
 	lines = read_file('input.txt')
